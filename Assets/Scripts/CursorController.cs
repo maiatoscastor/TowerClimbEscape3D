@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class CursorController : MonoBehaviour
+{
+    void Start()
+    {
+        // Esconde o cursor
+        Cursor.visible = false;
+
+        // Trava o cursor no centro da janela do jogo
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update()
+    {
+        // Pressiona ESC para libertar o cursor (útil para sair do modo de jogo)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+}
